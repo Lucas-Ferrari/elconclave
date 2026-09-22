@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Galería de Personajes | El Cónclave de la Tierra Media</title>
+<meta name="description" content="Directorio filtrable de personajes de la Tierra Media por raza: Elfos, Enanos, Hobbits, Hombres, Maiar y Ainur, con perfiles detallados de cada uno.">
+<meta name="keywords" content="personajes Tolkien, Gandalf, Frodo, Galadriel, Aragorn, razas Tierra Media, Maiar, Ainur">
+<meta name="author" content="El Cónclave de la Tierra Media">
+<link rel="canonical" href="https://elconclave-tierramedia.example/personajes.html">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Galería de Personajes de la Tierra Media">
+<meta property="og:description" content="Directorio filtrable de personajes por raza, con perfiles detallados.">
+<meta property="og:url" content="https://elconclave-tierramedia.example/personajes.html">
+<meta property="og:locale" content="es_ES">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&amp;family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Saltar al contenido principal</a>
+
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a href="index.html" class="site-header__brand" aria-label="El Cónclave de la Tierra Media, ir a inicio">
+      <svg class="site-header__brand-icon" viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+        <circle cx="20" cy="20" r="18" fill="none" stroke="#c5a059" stroke-width="2"/>
+        <path d="M20 6 L20 34 M8 20 L32 20" stroke="#c5a059" stroke-width="1.5"/>
+        <circle cx="20" cy="20" r="5" fill="#8c2f1b"/>
+      </svg>
+      El Cónclave de la Tierra Media
+    </a>
+    <nav class="nav" id="siteNav" aria-label="Navegación principal">
+      <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navList" aria-label="Abrir menú de navegación">☰</button>
+      <ul class="nav__list" id="navList">
+        <li><a href="index.html" class="nav__link">Inicio</a></li>
+        <li><a href="historia.html" class="nav__link">El Autor y su Obra</a></li>
+        <li><a href="bibliografia.html" class="nav__link">Libros y Cuentos</a></li>
+        <li><a href="personajes.html" class="nav__link nav__link--active" aria-current="page">Personajes</a></li>
+        <li><a href="contacto.html" class="nav__link">El Cónclave</a></li>
+      </ul>
+      <button class="eye-toggle" id="eyeToggle" type="button" aria-pressed="false" title="Activar el Ojo de Sauron" aria-label="Activar el Ojo de Sauron">👁</button>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero hero--simple">
+    <div class="container hero__inner">
+      <div>
+        <span class="hero__eyebrow">Pueblos de Arda</span>
+        <h1>Galería de Personajes</h1>
+        <p class="hero__lead">Desde los Ainur que cantaron el mundo a la existencia hasta los hobbits que lo salvaron: filtra por raza para conocer a quienes habitan la Tierra Media.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="galeria-heading">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__kicker">Directorio</span>
+        <h2 id="galeria-heading">Filtra por raza</h2>
+      </div>
+
+      <div class="filter-bar" data-filter-group data-filter-attr="data-category" data-filter-target=".char-card" data-empty-target="#charsEmpty" data-hash-prefix="raza-" role="group" aria-label="Filtrar personajes por raza">
+        <button type="button" class="filter-bar__btn" data-filter="all" aria-pressed="true">Todos</button>
+        <button type="button" class="filter-bar__btn" data-filter="elfos" aria-pressed="false">Elfos</button>
+        <button type="button" class="filter-bar__btn" data-filter="enanos" aria-pressed="false">Enanos</button>
+        <button type="button" class="filter-bar__btn" data-filter="hobbits" aria-pressed="false">Hobbits</button>
+        <button type="button" class="filter-bar__btn" data-filter="hombres" aria-pressed="false">Hombres</button>
+        <button type="button" class="filter-bar__btn" data-filter="maiar" aria-pressed="false">Maiar</button>
+        <button type="button" class="filter-bar__btn" data-filter="ainur" aria-pressed="false">Ainur</button>
+      </div>
+
+      <div class="grid grid--3">
+
+        <article class="card char-card" data-category="elfos" data-char="galadriel" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Ver ficha completa de Galadriel">
+          <span class="char-card__avatar" aria-hidden="true">GA</span>
+          <span class="char-card__race">Elfa</span>
+          <h3 class="card__title">Galadriel</h3>
+          <p class="char-card__desc">Dama de Lothlórien y una de las Noldor más poderosas y antiguas que aún habitan la Tierra Media. Portadora del anillo Nenya, ofrece a la Comunidad refugio, consejo y regalos antes de continuar su viaje.</p>
+          <p class="char-card__quote">"Incluso la persona más pequeña puede cambiar el curso del futuro."</p>
+          <span class="char-card__more" aria-hidden="true">Ver ficha completa →</span>
+        </article>
+
+        <article class="card char-card" data-category="elfos" data-char="legolas" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Ver ficha completa de Legolas">
+          <span class="char-card__avatar" aria-hidden="true">LE</span>
+          <span class="char-card__race">Elfo</span>
+          <h3 class="card__title">Legolas</h3>
+          <p class="char-card__desc">Príncipe del Bosque Negro y arquero de habilidad extraordinaria. Miembro de la Comunidad del Anillo, forja una amistad inusual con el enano Gimli durante el viaje.</p>
+          <p class="char-card__quote">"Un elfo del reino del bosque no está a salvo tan lejos de casa."</p>
+          <span class="char-card__more" aria-hidden="true">Ver ficha completa →</span>
+        </article>
+
+        <article class="card char-card" data-category="elfos" data-char="elrond" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Ver ficha completa de Elrond">
+          <span class="char-card__avatar" aria-hidden="true">EL</span>
+          <span class="char-card__race">Elfo</span>
+          <h3 class="card__title">Elrond</h3>
+          <p class="char-card__desc">Señor de Rivendel y portador del anillo Vilya. Convoca el Concilio que decide destruir el Anillo Único y guía a la Comunidad en sus primeros pasos.</p>
+          <p class="char-card__quote">"Solo tiene que llevar el Anillo. No tiene que usar su poder."</p>
+          <span class="char-card__more" aria-hidden="true">Ver ficha completa →</span>
+        </article>
+
+        <article class="card char-card" data-category="enanos" data-char="thorin" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Ver ficha completa de Thorin Escudo de Roble">
+          <span class="char-card__avatar" aria-hidden="true">TH</span>
+          <span class="char-card__race">Enano</span>
+          <h3 class="card__title">Thorin Escudo de Roble</h3>
+          <p class="char-card__desc">Heredero del trono de Erebor, lidera a la Compañía en El Hobbit para reclamar su reino perdido y el tesoro custodiado por el dragón Smaug.</p>
+          <p class="char-card__quote">"Si más de nosotros valorara la comida, el júbilo y las canciones por encima del oro atesorado, sería un mundo más feliz."</p>
+          <span class="char-card__more" aria-hidden="true">Ver ficha completa →</span>
+        </article>
+
+        <article class="card char-card" data-category="enanos" data-char="gimli" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Ver ficha completa de Gimli">
+          <span class="char-card__avatar" aria-hidden="true">GI</span>
+          <span class="char-card__race">Enano</span>
+          <h3 class="card__title">Gimli</h3>
+          <p class="char-card__desc">Hijo de Glóin y miembro de la Comunidad del Anillo. Su lealtad y su rivalidad amistosa con Legolas se transforman en una de las grandes amistades de la Tercera Edad.</p>
+          <p class="char-card__quote">"Doce solamente. ¡Bah! Mi hacha ha contado cuarenta y dos."</p>
+          <span class="char-card__more" aria-hidden="true">Ver ficha completa →</span>
+        </article>
+
+        <article class="card char-card" data-category="hobbits" data-char="frodo" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Ver ficha completa de Frodo Bolsón">
+          <span class="char-card__avatar" aria-hidden="true">FR</span>
+          <span class="char-card__race">Hobbit</span>
+          <h3 class="card__title">Frodo Bolsón</h3>
+          <p class="char-card__desc">Portador del Anillo Único, hereda de su tío Bilbo la carga de destruirlo en el Monte del Destino, un viaje que lo marcará para siempre.</p>
+          <p class="char-card__quote">"Iré, pero no sé el camino."</p>
+          <span class="char-card__more" aria-hidden="true">Ver ficha completa →</span>
+        </article>
+
+        <article class="card char-card" data-category="hobbits" data-char="samsagaz" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Ver ficha completa de Samsagaz Gamyi">
+          <span class="char-card__avatar" aria-hidden="true">SA</span>
+          <span class="char-card__race">Hobbit</span>
+          <h3 class="card__title">Samsagaz Gamyi</h3>
+          <p class="char-card__desc">Jardinero y fiel amigo de Frodo, lo acompaña hasta Mordor. Su lealtad inquebrantable es una de las fuerzas morales centrales de la historia.</p>
+          <p class="char-card__quote">"Puedo llevar el Anillo, aunque no puedo llevarlo a usted. Pero puedo llevarle a usted."</p>
+          <span class="char-card__more" aria-hidden="true">Ver ficha completa →</span>
+        </article>
+
+        <article class="card char-card" data-category="hobbits" data-char="bilbo" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Ver ficha completa de Bilbo Bolsón">
+          <span class="char-card__avatar" aria-hidden="true">BI</span>
+          <span class="char-card__race">Hobbit</span>
+          <h3 class="card__title">Bilbo Bolsón</h3>
+          <p class="char-card__desc">Protagonista de El Hobbit, encuentra el Anillo Único durante su aventura hacia Erebor y, décadas después, lo cede a su sobrino Frodo.</p>
+          <p class="char-card__quote">"No todo lo que es oro reluce."</p>
+          <span class="char-card__more" aria-hidden="true">Ver ficha completa →</span>
+        </article>
+
+        <article class="card char-card" data-category="hombres" data-char="aragorn" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Ver ficha completa de Aragorn">
+          <span class="char-card__avatar" aria-hidden="true">AR</span>
+          <span class="char-card__race">Hombre</span>
+          <h3 class="card__title">Aragorn</h3>
+          <p class="char-card__desc">Heredero de Isildur y último de los reyes Númenóreanos, conocido también como Trancos. Guía a la Comunidad y finalmente reclama el trono de Gondor.</p>
+          <p class="char-card__quote">"No todos los que vagan están perdidos."</p>
+          <span class="char-card__more" aria-hidden="true">Ver ficha completa →</span>
+        </article>
+
+        <article class="card char-card" data-category="hombres" data-char="eowyn" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Ver ficha completa de Éowyn">
+          <span class="char-card__avatar" aria-hidden="true">EO</span>
+          <span class="char-card__race">Mujer de Rohan</span>
+          <h3 class="card__title">Éowyn</h3>
+          <p class="char-card__desc">Sobrina del rey Théoden de Rohan, desafía las expectativas de su papel para luchar en la Batalla de los Campos del Pelennor.</p>
+          <p class="char-card__quote">"No soy un hombre."</p>
+          <span class="char-card__more" aria-hidden="true">Ver ficha completa →</span>
+        </article>
+
+        <article class="card char-card" data-category="maiar" data-char="gandalf" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Ver ficha completa de Gandalf">
+          <span class="char-card__avatar" aria-hidden="true">GA</span>
+          <span class="char-card__race">Maia</span>
+          <h3 class="card__title">Gandalf</h3>
+          <p class="char-card__desc">Mago itinerante enviado a la Tierra Media para oponerse a Sauron. Portador secreto del anillo Narya, guía tanto a la Compañía de Thorin como a la Comunidad del Anillo.</p>
+          <p class="char-card__quote">"Todos debemos decidir qué hacer con el tiempo que nos ha sido dado."</p>
+          <span class="char-card__more" aria-hidden="true">Ver ficha completa →</span>
+        </article>
+
+        <article class="card char-card" data-category="maiar" data-char="sauron" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Ver ficha completa de Sauron">
+          <span class="char-card__avatar" aria-hidden="true">SA</span>
+          <span class="char-card__race">Maia</span>
+          <h3 class="card__title">Sauron</h3>
+          <p class="char-card__desc">Antiguo Maia corrompido por Morgoth. Forjó el Anillo Único para dominar la Tierra Media y es el gran antagonista de la Segunda y Tercera Edad.</p>
+          <p class="char-card__quote">"Un Anillo para gobernarlos a todos."</p>
+          <span class="char-card__more" aria-hidden="true">Ver ficha completa →</span>
+        </article>
+
+        <article class="card char-card" data-category="ainur" data-char="varda" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Ver ficha completa de Varda (Elbereth)">
+          <span class="char-card__avatar" aria-hidden="true">VA</span>
+          <span class="char-card__race">Ainu (Valië)</span>
+          <h3 class="card__title">Varda (Elbereth)</h3>
+          <p class="char-card__desc">La más venerada de los Valar entre los Elfos, creadora de las estrellas. Es invocada como Elbereth en momentos de gran peligro a lo largo de las historias.</p>
+          <p class="char-card__quote">"A Elbereth Gilthoniel, o menel palan-díriel."</p>
+          <span class="char-card__more" aria-hidden="true">Ver ficha completa →</span>
+        </article>
+
+        <article class="card char-card" data-category="ainur" data-char="manwe" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Ver ficha completa de Manwë">
+          <span class="char-card__avatar" aria-hidden="true">MA</span>
+          <span class="char-card__race">Ainu (Vala)</span>
+          <h3 class="card__title">Manwë</h3>
+          <p class="char-card__desc">Rey de los Valar y esposo de Varda, gobierna desde Taniquetil y es el más cercano en pensamiento a Eru Ilúvatar. Su vigilancia sobre Arda, ejercida a través de las águilas y los vientos, se extiende a lo largo de todas las Edades.</p>
+          <p class="char-card__quote">"Ningún mal puede prosperar para siempre."</p>
+          <span class="char-card__more" aria-hidden="true">Ver ficha completa →</span>
+        </article>
+
+        <article class="card char-card" data-category="hombres" data-char="boromir" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Ver ficha completa de Boromir">
+          <span class="char-card__avatar" aria-hidden="true">BO</span>
+          <span class="char-card__race">Hombre</span>
+          <h3 class="card__title">Boromir</h3>
+          <p class="char-card__desc">Hijo mayor del Senescal Denethor de Gondor, se une a la Comunidad del Anillo para defender su reino de Sauron. Sucumbe brevemente a la tentación del Anillo, pero muere defendiendo a Merry y Pippin con honor.</p>
+          <p class="char-card__quote">"Es un extraño destino que debamos sufrir tanto temor y duda por una cosa tan pequeña."</p>
+          <span class="char-card__more" aria-hidden="true">Ver ficha completa →</span>
+        </article>
+
+      </div>
+
+      <p class="no-results" id="charsEmpty" hidden>No hay personajes de esta raza todavía. Vuelve pronto, el Cónclave sigue documentando la Tierra Media.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="site-footer__grid">
+      <div>
+        <h3 class="site-footer__heading">Palabras de la Tierra Media</h3>
+        <blockquote class="footer-quote" id="footerQuote">
+          <p>Cargando una cita de la Tierra Media…</p>
+        </blockquote>
+      </div>
+      <div>
+        <h3 class="site-footer__heading">Explorar</h3>
+        <ul>
+          <li><a class="site-footer__link" href="index.html">Inicio</a></li>
+          <li><a class="site-footer__link" href="historia.html">El Autor y su Obra</a></li>
+          <li><a class="site-footer__link" href="bibliografia.html">Libros y Cuentos</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="site-footer__heading">El Cónclave</h3>
+        <p>¿Preguntas, teorías o correcciones élficas? <a class="site-footer__link" href="contacto.html">Escríbenos</a>.</p>
+      </div>
+    </div>
+    <div class="site-footer__bottom">
+      <p>Sitio de fans no oficial dedicado a la obra de J.R.R. Tolkien. El Señor de los Anillos, El Hobbit y El Silmarillion son propiedad del Tolkien Estate y sus editoriales.</p>
+      <p>&copy; <span id="year"></span> El Cónclave de la Tierra Media.</p>
+    </div>
+  </div>
+</footer>
+
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script src="js/main.js"></script>
+<script src="js/filter.js"></script>
+<script src="js/personajes.js"></script>
+</body>
+</html>
