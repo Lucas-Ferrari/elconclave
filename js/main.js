@@ -49,10 +49,54 @@
     var btn = document.getElementById('eyeToggle');
     if (!btn) return;
     var STORAGE_KEY = 'tierra-media:sauron-mode';
+    var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var eye = null;
+    var pointer = null;
+    var frame = 0;
+
+    // La pupila se desplaza hacia el puntero; rAF evita recalcular en cada pointermove
+    function updatePupil() {
+      frame = 0;
+      if (!eye || !pointer) return;
+      var rect = eye.getBoundingClientRect();
+      var dx = pointer.x - (rect.left + rect.width / 2);
+      var dy = pointer.y - (rect.top + rect.height / 2);
+      var dist = Math.sqrt(dx * dx + dy * dy) || 1;
+      var reach = Math.min(1, dist / 300);
+      eye.style.setProperty('--eye-x', (dx / dist * reach * rect.width * 0.32).toFixed(1) + 'px');
+      eye.style.setProperty('--eye-y', (dy / dist * reach * rect.height * 0.12).toFixed(1) + 'px');
+    }
+
+    function track(e) {
+      pointer = { x: e.clientX, y: e.clientY };
+      if (!frame) frame = requestAnimationFrame(updatePupil);
+    }
+
+    function wakeEye() {
+      if (eye) return;
+      eye = document.createElement('div');
+      eye.className = 'sauron-eye';
+      eye.setAttribute('aria-hidden', 'true');
+      eye.innerHTML = '<div class="sauron-eye__iris"><span class="sauron-eye__pupil"></span></div>';
+      document.body.appendChild(eye);
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () { if (eye) eye.classList.add('sauron-eye--awake'); });
+      });
+      if (!reduceMotion) document.addEventListener('pointermove', track, { passive: true });
+    }
+
+    function sleepEye() {
+      document.removeEventListener('pointermove', track);
+      if (frame) cancelAnimationFrame(frame);
+      frame = 0;
+      if (eye) eye.remove();
+      eye = null;
+    }
 
     function apply(active) {
       document.body.classList.toggle('sauron-mode', active);
       btn.setAttribute('aria-pressed', String(active));
+      if (active) wakeEye(); else sleepEye();
     }
 
     var saved = false;
