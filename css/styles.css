@@ -222,7 +222,14 @@ button { font-family: inherit; cursor: pointer; }
 .hero {
   position: relative;
   color: var(--parchment);
-  background: radial-gradient(ellipse at top, var(--primary-light) 0%, var(--primary-color) 45%, var(--primary-dark) 100%);
+  /* Capa 1: velo con los tokens del tema (así el modo Sauron lo tiñe solo); capa 2: la imagen de cada página; capa 3: fallback */
+  background:
+    linear-gradient(180deg,
+      color-mix(in srgb, var(--primary-dark) 70%, transparent) 0%,
+      color-mix(in srgb, var(--primary-color) 78%, transparent) 55%,
+      color-mix(in srgb, var(--primary-dark) 94%, transparent) 100%),
+    var(--hero-img, none) center / cover no-repeat,
+    radial-gradient(ellipse at top, var(--primary-light) 0%, var(--primary-color) 45%, var(--primary-dark) 100%);
   padding-block: clamp(4.5rem, 12vw, 8.5rem);
   overflow: hidden;
   isolation: isolate;
@@ -235,6 +242,14 @@ button { font-family: inherit; cursor: pointer; }
   min-height: clamp(260px, 30vw, 340px);
   padding-block: clamp(2.75rem, 5vw, 3.5rem);
 }
+
+/* Imagen de fondo por página. La url() vive acá (y no inline en el HTML) para que se resuelva relativa a esta hoja */
+.hero--inicio      { --hero-img: url("../img/hero-inicio.webp"); }
+.hero--historia    { --hero-img: url("../img/hero-historia.webp"); }
+.hero--bibliografia { --hero-img: url("../img/hero-bibliografia.webp"); }
+.hero--personajes  { --hero-img: url("../img/hero-personajes.webp"); }
+.hero--contacto    { --hero-img: url("../img/hero-contacto.webp"); }
+.hero--creditos    { --hero-img: url("../img/hero-bibliografia.webp"); }
 
 .hero::before {
   content: "";
@@ -262,7 +277,7 @@ button { font-family: inherit; cursor: pointer; }
   margin-bottom: 0.75rem;
 }
 
-.hero h1 { color: var(--parchment); }
+.hero h1 { color: var(--parchment); text-shadow: 0 2px 12px rgba(0, 0, 0, 0.55); }
 
 .hero__lead {
   max-width: 42ch;
@@ -388,8 +403,9 @@ button { font-family: inherit; cursor: pointer; }
 /* ---------- 8. Página Inicio: accesos directos ---------- */
 .shortcuts__link {
   display: block;
+  overflow: hidden;
   text-align: center;
-  padding: 2rem 1rem;
+  padding: 0 0 1.25rem;
   background: var(--primary-color);
   color: var(--parchment);
   border-radius: var(--radius-lg);
@@ -403,7 +419,19 @@ button { font-family: inherit; cursor: pointer; }
   transform: translateY(-3px);
   text-decoration: none;
 }
-.shortcuts__icon { font-size: 2rem; display: block; margin-bottom: 0.5rem; }
+.shortcuts__img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: center 25%;
+  border-bottom: 2px solid var(--tolkien-gold);
+  margin-bottom: 1.1rem;
+  transition: transform 0.5s ease;
+}
+.shortcuts__img--low { object-position: center 85%; }
+.shortcuts__link:hover .shortcuts__img { transform: scale(1.04); }
 
 /* ---------- 9. Historia: timeline ---------- */
 .timeline {
@@ -644,14 +672,43 @@ details[open] .book__chevron { transform: rotate(180deg); }
   gap: 0.9rem;
   align-items: flex-start;
 }
-.contact-info__icon {
+.contact-info__img {
   flex-shrink: 0;
-  width: 40px; height: 40px;
+  width: 56px; height: 56px;
   border-radius: 50%;
+  object-fit: cover;
   background: var(--primary-color);
-  color: var(--tolkien-gold-light);
-  display: flex; align-items: center; justify-content: center;
+  border: 2px solid var(--tolkien-gold);
 }
+
+/* ---------- 12b. Créditos de imágenes (Block: credits) ---------- */
+.credits__note { max-width: 75ch; color: var(--text-soft); margin-bottom: 1.5rem; }
+.credits {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr));
+}
+.credits__item {
+  display: flex;
+  gap: 0.9rem;
+  align-items: flex-start;
+  padding: 0.75rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+.credits__thumb {
+  flex-shrink: 0;
+  width: 72px; height: 72px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  border: 1px solid var(--tolkien-gold);
+}
+.credits__title { font-weight: 600; font-size: 0.9rem; line-height: 1.3; overflow-wrap: anywhere; margin-bottom: 0.2rem; }
+.credits__meta { font-size: 0.8rem; color: var(--text-soft); margin: 0; overflow-wrap: anywhere; }
+.credits__license { font-weight: 700; color: var(--fire-red); }
 
 /* ---------- 13. Footer ---------- */
 .site-footer {
@@ -952,22 +1009,40 @@ body.char-modal-open { overflow: hidden; }
   transition: transform 0.4s ease;
 }
 .char-modal__slide {
+  position: relative;
   flex: 0 0 100%;
-  min-height: 220px;
+  height: clamp(220px, 50vw, 300px);
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 0.6rem;
+  justify-content: flex-end;
+  padding-bottom: 1rem;
   color: var(--parchment);
   text-align: center;
 }
-.char-modal__slide-icon { font-size: 3.5rem; filter: drop-shadow(0 3px 6px rgba(0,0,0,0.4)); }
+.char-modal__slide-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 25%; /* en ilustraciones verticales el sujeto suele estar en el tercio superior */
+}
+/* Objetos de museo (anillos, armas): se muestran enteros, sin recortar, sobre un gris
+   que continúa el fondo de las fotos del museo (gana a los fondos por raza por especificidad) */
+.char-modal .char-modal__slide.char-modal__slide--contain {
+  background: radial-gradient(circle at center, #f0f0ee 0%, #d6d6d3 100%);
+}
+.char-modal__slide--contain .char-modal__slide-img {
+  object-fit: contain;
+  padding: 0.75rem 0.75rem 3.25rem;
+}
 .char-modal__slide-caption {
+  position: relative;
   font-family: var(--font-heading);
   font-size: 0.95rem;
   letter-spacing: 0.03em;
-  background: rgba(0, 0, 0, 0.25);
+  background: rgba(0, 0, 0, 0.6);
   padding: 0.3rem 0.8rem;
   border-radius: 999px;
 }

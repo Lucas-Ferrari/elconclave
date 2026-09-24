@@ -19,6 +19,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&amp;family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
+<link rel="preload" as="image" href="img/hero-inicio.webp" type="image/webp">
 
 <script type="application/ld+json">
 {
@@ -70,7 +71,7 @@
 
 <main id="main">
 
-  <section class="hero">
+  <section class="hero hero--inicio">
     <div class="container hero__inner">
       <div>
         <span class="hero__eyebrow">Bienvenido, viajero</span>
@@ -140,15 +141,15 @@
       </div>
       <div class="grid grid--3">
         <a class="shortcuts__link" href="historia.html">
-          <span class="shortcuts__icon" aria-hidden="true">📜</span>
+          <img class="shortcuts__img" src="img/card-autor.webp" alt="" width="450" height="675" loading="lazy" decoding="async">
           El Autor y su Obra
         </a>
         <a class="shortcuts__link" href="bibliografia.html">
-          <span class="shortcuts__icon" aria-hidden="true">📚</span>
+          <img class="shortcuts__img" src="img/card-libros.webp" alt="" width="387" height="720" loading="lazy" decoding="async">
           Libros y Cuentos
         </a>
         <a class="shortcuts__link" href="personajes.html">
-          <span class="shortcuts__icon" aria-hidden="true">🧝</span>
+          <img class="shortcuts__img shortcuts__img--low" src="img/card-personajes.webp" alt="" width="493" height="720" loading="lazy" decoding="async">
           Galería de Personajes
         </a>
       </div>
@@ -200,6 +201,7 @@
     </div>
     <div class="site-footer__bottom">
       <p>Sitio de fans no oficial dedicado a la obra de J.R.R. Tolkien. El Señor de los Anillos, El Hobbit y El Silmarillion son propiedad del Tolkien Estate y sus editoriales.</p>
+      <p>Imágenes de dominio público y con licencia libre vía Wikimedia Commons — <a class="site-footer__link" href="creditos.html">ver créditos</a>.</p>
       <p>&copy; <span id="year"></span> El Cónclave de la Tierra Media.</p>
     </div>
   </div>

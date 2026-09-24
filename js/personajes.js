@@ -3,10 +3,11 @@
  * al hacer click en una tarjeta se abre un modal con un carrusel de escenas
  * ilustradas, biografía extendida y datos adicionales.
  *
- * El sitio no usa fotografías reales (es un fan site sin derechos sobre
- * material oficial de las películas o ediciones), así que cada "foto" del
- * carrusel es una escena ilustrada con un icono y una leyenda, coherente
- * con los avatares tipográficos que ya usan las tarjetas.
+ * El sitio no usa material oficial de las películas ni de las ediciones
+ * (es un fan site sin derechos sobre ellos): cada escena del carrusel es una
+ * obra de dominio público o con licencia libre (CC) tomada de Wikimedia
+ * Commons, con su autoría y licencia listadas en creditos.html.
+ * Las fotos de objetos de museo llevan fit: 'contain' para verse enteras.
  */
 (function () {
   'use strict';
@@ -26,9 +27,9 @@
         'Rasgo distintivo': 'Videncia y sabiduría milenaria'
       },
       slides: [
-        { icon: '🪞', caption: 'El Espejo de Galadriel' },
-        { icon: '👑', caption: 'Dama de Lothlórien' },
-        { icon: '💍', caption: 'Portadora de Nenya' }
+        { img: 'img/espejo-galadriel.webp', caption: 'El Espejo de Galadriel' },
+        { img: 'img/lothlorien.webp', caption: 'Dama de Lothlórien' },
+        { img: 'img/anillo-nenya.webp', caption: 'Portadora de Nenya', fit: 'contain' }
       ]
     },
     legolas: {
@@ -45,9 +46,9 @@
         'Rasgo distintivo': 'Vista y oído sobrehumanos'
       },
       slides: [
-        { icon: '🏹', caption: 'Arquero del Bosque Negro' },
-        { icon: '🐎', caption: 'Jinete de Arod' },
-        { icon: '🤝', caption: 'Amistad con Gimli' }
+        { img: 'img/arco.webp', caption: 'Arquero del Bosque Negro', fit: 'contain' },
+        { img: 'img/caballo.webp', caption: 'Jinete de Arod' },
+        { img: 'img/amistad.webp', caption: 'Amistad con Gimli' }
       ]
     },
     elrond: {
@@ -64,9 +65,9 @@
         'Rasgo distintivo': 'Sanador y erudito'
       },
       slides: [
-        { icon: '🏛️', caption: 'Señor de Rivendel' },
-        { icon: '📜', caption: 'El Concilio de Elrond' },
-        { icon: '💍', caption: 'Portador de Vilya' }
+        { img: 'img/rivendel.webp', caption: 'Señor de Rivendel' },
+        { img: 'img/concilio.webp', caption: 'El Concilio de Elrond' },
+        { img: 'img/anillo-vilya.webp', caption: 'Portador de Vilya', fit: 'contain' }
       ]
     },
     thorin: {
@@ -83,9 +84,9 @@
         'Rasgo distintivo': 'Orgullo y determinación'
       },
       slides: [
-        { icon: '⛏️', caption: 'Heredero de Erebor' },
-        { icon: '🛡️', caption: 'Escudo de Roble' },
-        { icon: '🐉', caption: 'Frente a Smaug' }
+        { img: 'img/erebor.webp', caption: 'Heredero de Erebor' },
+        { img: 'img/escudo.webp', caption: 'Escudo de Roble', fit: 'contain' },
+        { img: 'img/smaug.webp', caption: 'Frente a Smaug' }
       ]
     },
     gimli: {
@@ -102,9 +103,9 @@
         'Rasgo distintivo': 'Lealtad feroz y humor cascarrabias'
       },
       slides: [
-        { icon: '🪓', caption: 'Hijo de Glóin' },
-        { icon: '🤝', caption: 'Rivalidad con Legolas' },
-        { icon: '⚔️', caption: 'En el Abismo de Helm' }
+        { img: 'img/hacha.webp', caption: 'Hijo de Glóin', fit: 'contain' },
+        { img: 'img/amistad.webp', caption: 'Rivalidad con Legolas' },
+        { img: 'img/abismo-helm.webp', caption: 'En el Abismo de Helm' }
       ]
     },
     frodo: {
@@ -121,9 +122,9 @@
         'Rasgo distintivo': 'Resistencia ante la corrupción del Anillo'
       },
       slides: [
-        { icon: '💍', caption: 'Portador del Anillo' },
-        { icon: '🏡', caption: 'La Comarca' },
-        { icon: '🌋', caption: 'El Monte del Destino' }
+        { img: 'img/anillo-unico.webp', caption: 'Portador del Anillo', fit: 'contain' },
+        { img: 'img/comarca.webp', caption: 'La Comarca' },
+        { img: 'img/monte-destino.webp', caption: 'El Monte del Destino' }
       ]
     },
     samsagaz: {
@@ -140,9 +141,9 @@
         'Momento clave': 'Carga a Frodo en las pendientes del Monte del Destino'
       },
       slides: [
-        { icon: '🌱', caption: 'Jardinero de Bolsón Cerrado' },
-        { icon: '🍳', caption: 'Provisiones para el viaje' },
-        { icon: '🕸️', caption: 'Frente a Ella-Laraña' }
+        { img: 'img/jardin.webp', caption: 'Jardinero de Bolsón Cerrado' },
+        { img: 'img/provisiones.webp', caption: 'Provisiones para el viaje' },
+        { img: 'img/ella-larana.webp', caption: 'Frente a Ella-Laraña' }
       ]
     },
     bilbo: {
@@ -159,9 +160,9 @@
         'Rasgo distintivo': 'Curiosidad e ingenio'
       },
       slides: [
-        { icon: '🎂', caption: 'Fiesta de cumpleaños' },
-        { icon: '💍', caption: 'Hallazgo del Anillo' },
-        { icon: '📖', caption: 'Autor de sus memorias' }
+        { img: 'img/fiesta.webp', caption: 'Fiesta de cumpleaños' },
+        { img: 'img/hallazgo-anillo.webp', caption: 'Hallazgo del Anillo', fit: 'contain' },
+        { img: 'img/libro-rojo.webp', caption: 'Autor de sus memorias' }
       ]
     },
     aragorn: {
@@ -178,9 +179,9 @@
         'Rasgo distintivo': 'Liderazgo forjado en el exilio'
       },
       slides: [
-        { icon: '🗺️', caption: 'Trancos, el Montaraz' },
-        { icon: '⚔️', caption: 'Andúril reforjada' },
-        { icon: '👑', caption: 'Rey de Gondor' }
+        { img: 'img/montaraz.webp', caption: 'Trancos, el Montaraz' },
+        { img: 'img/anduril.webp', caption: 'Andúril reforjada', fit: 'contain' },
+        { img: 'img/corona.webp', caption: 'Rey de Gondor', fit: 'contain' }
       ]
     },
     eowyn: {
@@ -197,9 +198,9 @@
         'Momento clave': 'Enfrenta al Rey Brujo de Angmar en los Campos del Pelennor'
       },
       slides: [
-        { icon: '🛡️', caption: 'Escudera de Rohan' },
-        { icon: '⚔️', caption: 'Frente al Rey Brujo' },
-        { icon: '🏰', caption: 'Edoras, su hogar' }
+        { img: 'img/escudera.webp', caption: 'Escudera de Rohan' },
+        { img: 'img/rey-brujo.webp', caption: 'Frente al Rey Brujo' },
+        { img: 'img/edoras.webp', caption: 'Edoras, su hogar' }
       ]
     },
     gandalf: {
@@ -216,9 +217,9 @@
         'Rasgo distintivo': 'Sabiduría y guía espiritual'
       },
       slides: [
-        { icon: '🧙', caption: 'El Mago Gris' },
-        { icon: '🔥', caption: 'Frente al Balrog' },
-        { icon: '⚡', caption: 'El Mago Blanco' }
+        { img: 'img/mago-gris.webp', caption: 'El Mago Gris' },
+        { img: 'img/balrog.webp', caption: 'Frente al Balrog' },
+        { img: 'img/mago-blanco.webp', caption: 'El Mago Blanco y Sombragris' }
       ]
     },
     sauron: {
@@ -235,9 +236,9 @@
         'Rasgo distintivo': 'Voluntad de dominio absoluto'
       },
       slides: [
-        { icon: '👁️', caption: 'El Ojo sin cuerpo' },
-        { icon: '💍', caption: 'El Anillo Único' },
-        { icon: '🏯', caption: 'Barad-dûr' }
+        { img: 'img/ojo.webp', caption: 'El Ojo sin cuerpo' },
+        { img: 'img/anillo-unico.webp', caption: 'El Anillo Único', fit: 'contain' },
+        { img: 'img/barad-dur.webp', caption: 'Barad-dûr' }
       ]
     },
     varda: {
@@ -254,9 +255,9 @@
         'Rasgo distintivo': 'Luz que ahuyenta a las criaturas de las sombras'
       },
       slides: [
-        { icon: '✨', caption: 'Creadora de las estrellas' },
-        { icon: '🙏', caption: 'Invocada como Elbereth' },
-        { icon: '🏔️', caption: 'Morada en Valinor' }
+        { img: 'img/estrellas.webp', caption: 'Creadora de las estrellas' },
+        { img: 'img/elbereth.webp', caption: 'Invocada como Elbereth' },
+        { img: 'img/valinor.webp', caption: 'Morada en Valinor' }
       ]
     },
     manwe: {
@@ -273,9 +274,9 @@
         'Rasgo distintivo': 'Sabiduría y autoridad sobre los demás Valar'
       },
       slides: [
-        { icon: '👑', caption: 'Rey de los Valar' },
-        { icon: '🦅', caption: 'Señor de las Águilas' },
-        { icon: '🏔️', caption: 'Trono en Taniquetil' }
+        { img: 'img/rey-valar.webp', caption: 'Rey de los Valar' },
+        { img: 'img/aguila.webp', caption: 'Señor de las Águilas' },
+        { img: 'img/taniquetil.webp', caption: 'Trono en Taniquetil' }
       ]
     },
     boromir: {
@@ -292,9 +293,9 @@
         'Rasgo distintivo': 'Valentía y devoción por su pueblo'
       },
       slides: [
-        { icon: '🛡️', caption: 'Hijo de Denethor' },
-        { icon: '📯', caption: 'El Cuerno de Gondor' },
-        { icon: '⚔️', caption: 'Última defensa de Merry y Pippin' }
+        { img: 'img/escudo.webp', caption: 'Hijo de Denethor', fit: 'contain' },
+        { img: 'img/cuerno.webp', caption: 'El Cuerno de Gondor', fit: 'contain' },
+        { img: 'img/ultima-defensa.webp', caption: 'Última defensa de Merry y Pippin' }
       ]
     }
   };
@@ -394,10 +395,21 @@
     slidesEl.innerHTML = '';
     data.slides.forEach(function (slide) {
       var div = document.createElement('div');
-      div.className = 'char-modal__slide';
-      div.innerHTML =
-        '<span class="char-modal__slide-icon" aria-hidden="true">' + slide.icon + '</span>' +
-        '<span class="char-modal__slide-caption">' + slide.caption + '</span>';
+      div.className = 'char-modal__slide' + (slide.fit === 'contain' ? ' char-modal__slide--contain' : '');
+
+      // alt vacío: la leyenda visible ya describe la escena, así el lector de pantalla no la repite
+      var img = document.createElement('img');
+      img.className = 'char-modal__slide-img';
+      img.src = slide.img;
+      img.alt = '';
+      img.decoding = 'async';
+
+      var caption = document.createElement('span');
+      caption.className = 'char-modal__slide-caption';
+      caption.textContent = slide.caption;
+
+      div.appendChild(img);
+      div.appendChild(caption);
       slidesEl.appendChild(div);
     });
 

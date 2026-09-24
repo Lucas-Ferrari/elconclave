@@ -19,6 +19,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&amp;family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
+<link rel="preload" as="image" href="img/hero-contacto.webp" type="image/webp">
 </head>
 <body>
 <a class="skip-link" href="#main">Saltar al contenido principal</a>
@@ -49,7 +50,7 @@
 
 <main id="main">
 
-  <section class="hero hero--simple">
+  <section class="hero hero--simple hero--contacto">
     <div class="container hero__inner">
       <div>
         <span class="hero__eyebrow">Únete a la comunidad</span>
@@ -122,21 +123,21 @@
         </div>
         <div class="contact-info">
           <div class="contact-info__item">
-            <span class="contact-info__icon" aria-hidden="true">✉</span>
+            <img class="contact-info__img" src="img/contacto-correo.webp" alt="" width="135" height="160" loading="lazy" decoding="async">
             <div>
               <h3 class="card__title">Correo</h3>
               <p>conclave@tierramedia-fans.example</p>
             </div>
           </div>
           <div class="contact-info__item">
-            <span class="contact-info__icon" aria-hidden="true">🕮</span>
+            <img class="contact-info__img" src="img/contacto-foro.webp" alt="" width="160" height="139" loading="lazy" decoding="async">
             <div>
               <h3 class="card__title">Foro de la comunidad</h3>
               <p>Comparte teorías, arte y traducciones con otros lectores hispanohablantes de Tolkien.</p>
             </div>
           </div>
           <div class="contact-info__item">
-            <span class="contact-info__icon" aria-hidden="true">🔔</span>
+            <img class="contact-info__img" src="img/contacto-novedades.webp" alt="" width="160" height="160" loading="lazy" decoding="async">
             <div>
               <h3 class="card__title">Novedades</h3>
               <p>Suscríbete desde el formulario para recibir avisos sobre nuevos contenidos del sitio.</p>
@@ -174,6 +175,7 @@
     </div>
     <div class="site-footer__bottom">
       <p>Sitio de fans no oficial dedicado a la obra de J.R.R. Tolkien. El Señor de los Anillos, El Hobbit y El Silmarillion son propiedad del Tolkien Estate y sus editoriales.</p>
+      <p>Imágenes de dominio público y con licencia libre vía Wikimedia Commons — <a class="site-footer__link" href="creditos.html">ver créditos</a>.</p>
       <p>&copy; <span id="year"></span> El Cónclave de la Tierra Media.</p>
     </div>
   </div>
